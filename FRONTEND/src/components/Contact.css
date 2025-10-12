@@ -1,0 +1,90 @@
+.contact-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.contact-container h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info, .contact-form {
+    flex: 1; /* Entrambe le colonne occupano metà spazio */
+}
+
+.contact-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Stile per il modulo */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 15px;
+    background-color: #333; /* Un colore di prova */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+.upload-cv {
+    margin-top: 10px;
+}
+
+/* Stile per mobile */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+
+
+/* Stile per la sezione Mappa */
+.map-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.map-section h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden; /* Nasconde gli angoli dell'iframe per il border-radius */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,10 @@
+# File di ambiente
+.env
+/backend/.env
+
+# Dipendenze
+/node_modules
+/frontend/node_modules
+
+# File di build del frontend
+/frontend/dist
