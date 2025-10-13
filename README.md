@@ -65,3 +65,5 @@ Rotte accessibili a tutti per visualizzare i contenuti.
 -   `GET /api/reviews`: Mostra tutte le recensioni.
 -   `POST /api/contact`: Riceve i dati dal modulo di contatto, carica l'eventuale CV su Cloudinary e invia un'email di notifica tramite SendGrid.
 
+
+FRONTEND =====> NPM RUN DEV
