@@ -30,7 +30,7 @@ Il progetto segue un'architettura standard e scalabile, separando le responsabil
 
 ---
 
-## ✨ Funzionalità Implementate
+##  Funzionalità Implementate
 
 Il backend offre un set completo di API per ogni aspetto del sito.
 
