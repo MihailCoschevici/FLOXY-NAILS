@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { Link } from 'react-router-dom';
 import './Admin.css'; 
 
@@ -8,7 +8,7 @@ function AdminTreatments() {
 
     const fetchTreatments = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/api/treatments');
+           const response = await api.get('/api/treatments');
             setTreatments(response.data);
         } catch (error) {
             console.error("Errore nel caricamento dei trattamenti:", error);
@@ -23,7 +23,7 @@ function AdminTreatments() {
         if (window.confirm("Sei sicuro di voler eliminare questo trattamento?")) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.delete(`http://localhost:5001/api/admin/treatments/${id}`, {
+                await api.delete(`/api/admin/treatments/${id}`, {
                     headers: { 'x-auth-token': token }
                 });
                 alert('Trattamento eliminato con successo!');

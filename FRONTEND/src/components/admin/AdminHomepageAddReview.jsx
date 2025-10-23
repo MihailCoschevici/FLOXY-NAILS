@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { useNavigate } from 'react-router-dom';
 import './Admin.css';
 
@@ -18,7 +18,7 @@ function AdminHomepageAddReview() {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/reviews', reviewData, {
+            await api.post('/api/admin/reviews', reviewData, {
                 headers: {
                     'x-auth-token': token,
                 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { Link } from 'react-router-dom';
 import './Admin.css';
 
@@ -9,8 +9,8 @@ function AdminHomepage() {
 
     const fetchData = async () => {
         try {
-            const slidesRes = await axios.get('http://localhost:5001/api/homepage/slides');
-            const reviewsRes = await axios.get('http://localhost:5001/api/reviews');
+            const slidesRes = await api.get('/api/homepage/slides');
+            const reviewsRes = await api.get('/api/reviews');
             setSlides(slidesRes.data);
             setReviews(reviewsRes.data);
         } catch (error) {
@@ -26,7 +26,7 @@ const handleDelete = async (id, type) => {
         if (window.confirm(`Sei sicuro di voler eliminare questo elemento?`)) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.delete(`http://localhost:5001${endpoint}`, {
+                await api.delete(endpoint, {
                     headers: { 'x-auth-token': token }
                 });
                 alert('Elemento eliminato con successo!');

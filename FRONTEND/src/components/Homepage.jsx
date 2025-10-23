@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../apiConfig';
 import './Homepage.css';
 import { Link } from 'react-router-dom'; 
 import { 
@@ -19,12 +19,12 @@ function Homepage() {
     const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
     const [animationClass, setAnimationClass] = useState('slide-in-right');
     useEffect(() => {
-        axios.get('http://localhost:5001/api/homepage/slides')
+        api.get('/api/homepage/slides')
             .then(response => { setSlides(response.data); })
             .catch(error => { console.error("Errore caricamento slide!", error); });
     }, []);
     useEffect(() => {
-        axios.get('http://localhost:5001/api/reviews')
+        api.get('/api/reviews')
             .then(response => { setReviews(response.data); })
             .catch(error => { console.error("Errore caricamento recensioni!", error); });
     }, []);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../apiConfig';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css"; 
 import Video from "yet-another-react-lightbox/plugins/video"; 
@@ -13,7 +13,7 @@ function Gallery() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/gallery')
+        api.get('/api/gallery')
             .then(response => {
                 setAllMedia(response.data);
             })

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { useNavigate } from 'react-router-dom';
 import './Admin.css';
 
@@ -54,7 +54,7 @@ function AdminTreatmentsAdd() {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/treatments', data, {
+            await api.post('/api/admin/treatments', data, {
                 headers: {
                     'x-auth-token': token,
                     'Content-Type': 'multipart/form-data'

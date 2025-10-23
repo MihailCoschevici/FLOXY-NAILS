@@ -1,9 +1,9 @@
 # File di ambiente
 .env
 /backend/.env
+/node_modules
 
 # Dipendenze
-/node_modules
 /frontend/node_modules
 
 # File di build del frontend

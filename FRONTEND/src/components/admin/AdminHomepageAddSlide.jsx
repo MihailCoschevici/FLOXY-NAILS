@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { useNavigate } from 'react-router-dom';
 import './Admin.css';
 
@@ -25,7 +25,7 @@ function AdminHomepageAddSlide() {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/homepage/slides', data, {
+            await api.post('/api/admin/homepage/slides', data, {
                 headers: {
                     'x-auth-token': token,
                     'Content-Type': 'multipart/form-data'

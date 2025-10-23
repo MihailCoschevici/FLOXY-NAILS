@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { useNavigate } from 'react-router-dom';
 import './Admin.css'; 
 
@@ -24,7 +24,7 @@ function AdminGalleryAdd() {
         data.append('media', file);
 try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5001/api/admin/gallery', data, {
+           await api.post('/api/admin/gallery', data, {
                 headers: {
                     'x-auth-token': token,
                     'Content-Type': 'multipart/form-data'

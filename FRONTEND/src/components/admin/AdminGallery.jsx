@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../apiConfig';
 import { Link } from 'react-router-dom';
 import './Admin.css'; 
 
@@ -9,7 +9,7 @@ function AdminGallery() {
     
     const fetchMedia = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/api/gallery');
+            const response = await api.get('/api/gallery');
             setMedia(response.data);
         } catch (error) {
             console.error("Errore nel caricamento della galleria:", error);
@@ -22,7 +22,7 @@ function AdminGallery() {
         if (window.confirm("Sei sicuro di voler eliminare questo elemento?")) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.delete(`http://localhost:5001/api/admin/gallery/${id}`, {
+                await api.delete(`/api/admin/gallery/${id}`, {
                     headers: { 'x-auth-token': token }
                 });
                 alert('Elemento eliminato con successo!');

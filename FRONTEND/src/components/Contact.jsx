@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../apiConfig';
 import './Contact.css';
 import { FaMapMarkerAlt, FaEnvelope, FaWhatsapp, FaClock, FaUser, FaPaperPlane, FaFileUpload } from 'react-icons/fa';
 
@@ -33,7 +33,7 @@ function Contact() {
     if (formData.cv) data.append('cv', formData.cv);
 
     try {
-      const response = await axios.post('http://localhost:5001/api/contact', data);
+      const response = await api.post('/api/contact', data);
       alert(response.data.message);
 
       setFormData({

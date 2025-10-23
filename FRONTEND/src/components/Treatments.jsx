@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../apiConfig';
 import Modal from './Modal'; 
 import { FaWhatsapp } from 'react-icons/fa'; 
 import { MdOutlineSpa } from "react-icons/md"; 
@@ -13,7 +13,7 @@ function Treatments() {
     const [selectedTreatment, setSelectedTreatment] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/treatments')
+        api.get('/api/treatments')
             .then(response => { setAllTreatments(response.data); })
             .catch(error => { console.error("Errore trattamenti!", error); });
     }, []);
