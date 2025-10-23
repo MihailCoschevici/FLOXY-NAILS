@@ -1,6 +1,6 @@
 const Treatment = require('../models/Treatment');
 
-
+// ---  TUTTI trattamenti ---
 exports.getAllTreatments = async (req, res) => {
     try {
         const treatments = await Treatment.find();
@@ -10,21 +10,21 @@ exports.getAllTreatments = async (req, res) => {
     }
 };
 
+// --- NUOVO trattamento 
 exports.createTreatment = async (req, res) => {
-    const { name, description, benefits, price, category } = req.body;
-    
+    const { name, description, price, category, benefits, features } = req.body;
     
     if (!req.file) {
         return res.status(400).json({ message: "Immagine del trattamento mancante." });
     }
-    
     const imageUrl = req.file.path;
 
     const newTreatment = new Treatment({
         name,
         imageUrl,
         description,
-        benefits,
+        benefits, 
+        features, 
         price,
         category
     });
@@ -37,10 +37,10 @@ exports.createTreatment = async (req, res) => {
     }
 };
 
+// ELIMINARE un trattamento ---
 exports.deleteTreatment = async (req, res) => {
     try {
-        const treatmentId = req.params.id;
-        const deletedTreatment = await Treatment.findByIdAndDelete(treatmentId);
+        const deletedTreatment = await Treatment.findByIdAndDelete(req.params.id);
         if (!deletedTreatment) {
             return res.status(404).json({ message: "Trattamento non trovato" });
         }
@@ -50,7 +50,7 @@ exports.deleteTreatment = async (req, res) => {
     }
 };
 
-
+// --- MODIFICARE un trattamento  ---
 exports.updateTreatment = async (req, res) => {
     try {
         const updateData = { ...req.body };

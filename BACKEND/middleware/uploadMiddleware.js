@@ -2,6 +2,7 @@ const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const multer = require('multer');
 
+
 if (
   !process.env.CLOUDINARY_CLOUD_NAME ||
   !process.env.CLOUDINARY_API_KEY ||
@@ -18,16 +19,24 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: async (req, file) => {
+  params: (req, file) => {
+    let folder = 'floxynails/generici'; 
+    let resource_type = 'auto'; 
+    if (file.mimetype.startsWith('image') || file.mimetype.startsWith('video')) {
+      folder = 'floxynails/media';
+    } else if (file.mimetype.includes('pdf') || file.mimetype.includes('document')) {
+      folder = 'floxynails/cvs';
+      resource_type = 'raw';
+    }
+
     return {
-      folder: 'floxynails', 
-      allowed_formats: ['jpg', 'png', 'jpeg', 'webp', 'pdf', 'doc', 'docx'],
-      public_id: `${Date.now()}-${file.originalname.split('.')[0]}`, 
-      resource_type: file.mimetype.includes('pdf') ? 'raw' : 'auto',
+      folder: folder,
+      resource_type: resource_type,
+      allowed_formats: ['jpg', 'png', 'jpeg', 'gif', 'mp4', 'mov', 'pdf', 'doc', 'docx'],
     };
   },
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage: storage });
 
 module.exports = upload;

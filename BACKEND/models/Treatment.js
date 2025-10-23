@@ -13,8 +13,15 @@ const treatmentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    
     benefits: {
-        type: String 
+        type: [String],
+        default: []
+    },
+ 
+    features: {
+        type: [String],
+        default: []
     },
     price: {
         type: Number,
