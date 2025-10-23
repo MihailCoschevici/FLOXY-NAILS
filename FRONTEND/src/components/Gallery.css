@@ -1,0 +1,123 @@
+
+.gallery-grid {
+    column-count: 3;
+    column-gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: var(--colore-bianco);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img,
+.gallery-video {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; 
+    gap: 12px;
+    margin: 50px auto 40px auto;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+}
+
+.filter-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid #eee;
+    background-color: var(--colore-bianco);
+    color: var(--colore-testo-principale);
+    border-radius: 25px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.filter-btn:hover {
+    background-color: var(--colore-nude-accento);
+    color: var(--colore-nero);
+    border-color: var(--colore-nude-accento);
+}
+.filter-btn.active {
+    background-color: var(--colore-antracite);
+    color: var(--colore-bianco);
+    border-color: var(--colore-antracite);
+}
+
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        column-count: 2;
+    }
+
+    .filter-menu {
+        justify-content: center;
+        flex-wrap: wrap; 
+        white-space: normal;
+        overflow-x: visible;
+        padding: 10px 20px;
+        gap: 10px;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        column-count: 1;
+        padding: 0 10px;
+    }
+
+    .filter-menu {
+        justify-content: center;
+        flex-wrap: wrap; 
+        white-space: normal;
+        overflow-x: visible;
+        margin: 30px auto 25px auto;
+        gap: 8px 10px;
+        max-width: 95%;
+    }
+
+    .filter-btn {
+        font-size: 0.85em;
+        padding: 8px 16px;
+        border-radius: 20px;
+    }
+
+    .page-title {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+}

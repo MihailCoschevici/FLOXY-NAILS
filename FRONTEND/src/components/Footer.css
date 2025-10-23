@@ -1,0 +1,117 @@
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer {
+    background-color: var(--colore-nero);
+    color: #a0a0a0;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 10px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4em;
+    color: var(--colore-bianco);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+.footer-column h4 {
+    color: var(--colore-bianco);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li {
+    margin-bottom: 10px;
+}
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--colore-nude-accento);
+    transform: translateY(-2px);
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.social-icons a {
+    color: var(--colore-bianco);
+    font-size: 1.6em;
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    color: var(--colore-nude-accento);
+    transform: translateY(-3px) scale(1.15);
+    text-shadow: 0 0 8px rgba(217, 191, 169, 0.5);
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid #444;
+    padding: 15px 20px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+}
+.footer-bottom-bar p {
+    margin: 0;
+}
+.footer-bottom-bar a {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+.footer-bottom-bar a:hover {
+    color: var(--colore-nude-accento);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    .footer-column {
+        margin-bottom: 10px;
+    }
+}

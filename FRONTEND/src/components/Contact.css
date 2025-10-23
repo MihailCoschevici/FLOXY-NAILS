@@ -1,0 +1,219 @@
+
+.contact-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--colore-testo-principale);
+    background: linear-gradient(180deg, #fff 0%, #f8f4f2 100%);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    animation: fadeUp 1s ease-out;
+}
+
+
+.contact-container h2 {
+    text-align: center;
+    font-size: 2.6em;
+    margin-bottom: 40px;
+    color: var(--colore-antracite);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+.contact-container h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--colore-nude-accento);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+
+.contact-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+.contact-info {
+    flex: 1;
+    min-width: 320px;
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeUp 1.2s ease-out;
+    transition: transform 0.3s ease;
+}
+.contact-info:hover {
+    transform: translateY(-5px);
+}
+.contact-info h3 {
+    font-size: 1.5em;
+    color: var(--colore-antracite);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+.contact-info p {
+    font-size: 1em;
+    color: var(--colore-testo-secondario);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+.contact-info a {
+    color: var(--colore-nude-accento);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contact-info a:hover {
+    color: var(--colore-antracite);
+}
+.contact-form {
+    flex: 1;
+    min-width: 350px;
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeUp 1.4s ease-out;
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 1em;
+    color: var(--colore-testo-principale);
+    background-color: #faf9f8;
+    transition: all 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: var(--colore-nude-accento);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(217,191,169,0.3);
+}
+
+.contact-form button {
+    padding: 14px 25px;
+    background: linear-gradient(90deg, var(--colore-nude-accento), #e7cbb8);
+    color: var(--colore-antracite);
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.contact-form button:hover {
+    background: var(--colore-antracite);
+    color: var(--colore-bianco);
+    transform: scale(1.05);
+}
+
+
+.upload-cv {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--colore-testo-secondario);
+}
+
+
+.map-section {
+    margin-top: 100px;
+    text-align: center;
+    animation: fadeUp 1.6s ease-out;
+}
+.map-section h3 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: var(--colore-antracite);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+.map-container:hover {
+    transform: scale(1.01);
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 992px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .contact-form button {
+        width: 100%;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        margin: 30px auto;
+        padding: 20px 10px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .contact-container h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .map-section {
+        margin-top: 60px;
+    }
+    .map-section h3 {
+        font-size: 1.6em;
+    }
+    .map-container {
+        height: 320px;
+    }
+}
