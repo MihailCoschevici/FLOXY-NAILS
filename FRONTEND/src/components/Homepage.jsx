@@ -64,7 +64,7 @@ function Homepage() {
                                 key={slide._id} 
                                 className={index === currentSlideIndex ? 'slide active' : 'slide'}
                             >
-                                <img src={slide.imageUrl} alt={slide.title} />
+                                <img src={slide.imageUrl.replace('/upload/', '/upload/w_800,q_80/')}  alt={slide.title} fetchPriority="high"/>
                                 <div className="slide-caption">
                                     <h2>{slide.title}</h2>
                                     <p>{slide.subtitle}</p>

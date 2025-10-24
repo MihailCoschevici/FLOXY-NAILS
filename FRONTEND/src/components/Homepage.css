@@ -111,7 +111,8 @@
 .featured-services-section {
     text-align: center;
     padding: 60px 20px;
-    background-color: var(--colore-bianco);
+    background-color:#f9f9f9;
+    box-shadow: 0 4px 5px ;
 }
 .featured-services-section h2 {
     font-size: 2.5em;
@@ -178,9 +179,10 @@
 
 .reviews-section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 50px 20px;
     background-color: #f9f9f9;
     margin-bottom: 60px;
+    box-shadow: 0 2px 5px ;
 }
 .reviews-section h2 {
     font-size: 2.5em;

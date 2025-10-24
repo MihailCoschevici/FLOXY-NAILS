@@ -22,7 +22,7 @@ function Header() {
                     
                     <div className="logo">
                         <Link to="/">
-                            <img src={logoImmagine} alt="Logo FloxyNails" />
+                            <img src={logoImmagine} alt="Logo FloxyNails"  width="150" height="150"/>
                         </Link>
                     </div>
                     <button className="mobile-menu-icon" onClick={toggleMobileMenu}>

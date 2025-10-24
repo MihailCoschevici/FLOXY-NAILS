@@ -6,7 +6,7 @@
 
 .site-footer {
     background-color: var(--colore-nero);
-    color: #a0a0a0;
+    color: #e0e0e0;
     font-family: 'Montserrat', sans-serif;
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -54,7 +54,7 @@
     margin-bottom: 10px;
 }
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--colore-bianco);
     text-decoration: none;
     font-weight: 500;
     text-transform: uppercase;
@@ -98,7 +98,7 @@
     margin: 0;
 }
 .footer-bottom-bar a {
-    color: #a0a0a0;
+    color: #e0e0e0;
     text-decoration: none;
 }
 .footer-bottom-bar a:hover {
