@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Modal.css';
 
 function Modal({ show, onClose, children }) {
-    if (!show) {
-        return null;
-    }
+    useEffect(() => {
+        document.body.style.overflow = show ? "hidden" : "auto";
+        return () => (document.body.style.overflow = "auto");
+    }, [show]);
+
+    if (!show) return null;
+
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <div className="modal-header">
                     <button className="modal-close-btn" onClick={onClose}>
-                        &times; 
+                        &times;
                     </button>
                 </div>
                 <div className="modal-body">
-                    {children} 
+                    {children}
                 </div>
             </div>
         </div>

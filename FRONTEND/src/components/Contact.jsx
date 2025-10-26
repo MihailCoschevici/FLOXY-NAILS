@@ -60,7 +60,7 @@ function Contact() {
         
         <div className="contact-info">
           <h3>Informazioni di Contatto:</h3>
-          <p><FaMapMarkerAlt /> <strong>Indirizzo:</strong> Via Giovanni Targioni Tozzetti, 35A – Firenze</p>
+          <p><FaMapMarkerAlt /> <strong>Indirizzo:</strong> Firenze,Via Giovanni Targioni Tozzetti 35A, CAP:50144</p>
           <p><FaWhatsapp /> <strong>WhatsApp:</strong> +39 000 000 00544</p>
           <p><FaEnvelope /> <strong>Email:</strong> info@floxynails.it</p>
           <hr />

@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 import './Header.css'; 
 import logoImmagine from '../assets/logo-bianco.png';
+import { FaMapMarkerAlt } from "react-icons/fa";
+
 
 function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,7 +31,7 @@ function Header() {
                         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                     </button>
                     <div className="header-contact-info desktop-only">
-                        <span>📍 Via Giovanni Targioni Tozzetti, 35a, Firenze</span>
+                        <span><FaMapMarkerAlt/> Via Giovanni Targioni Tozzetti, 35a, Firenze</span>
                         <span>📞 +39 00000000544</span>
                         <a href="https://wa.me/3900000000544" target="_blank" rel="noopener noreferrer" className="whatsapp-button">
                            <FaWhatsapp /> <span>Prenota su Whatsapp</span>

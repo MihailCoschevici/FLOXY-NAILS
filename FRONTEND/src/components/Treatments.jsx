@@ -91,7 +91,7 @@ function Treatments() {
                                 className="whatsapp-button-modal"
                             >
                                 <FaWhatsapp /> 
-                                <span>Prenota su WhatsApp</span>
+                                <span>Prenota ora su WhatsApp</span>
                             </a>
                         </div>
                     </div>

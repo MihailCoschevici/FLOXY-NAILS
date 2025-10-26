@@ -38,7 +38,7 @@ function Footer() {
 
           <div className="social-icons">
             <a
-              href="https://www.facebook.com/floxynails"
+              href="https://www.facebook.com/floxynail"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -46,7 +46,7 @@ function Footer() {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.instagram.com/floxynails"
+              href="https://www.instagram.com/floxy_nails_?igsh=MXd0NXF4M3h2ZTl1MA=="
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
